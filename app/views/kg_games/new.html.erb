@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-4">
+  <h1 class="font-bold text-4xl">Creating a new Killer Game party</h1>
+
+  <%= form_with model: @kg_game do |f| %>
+    <%= f.label :"Game name" %>
+    <%= f.text_field :name %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
