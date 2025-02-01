@@ -1,0 +1,2 @@
+class KgGame < ApplicationRecord
+end
