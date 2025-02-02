@@ -26,11 +26,7 @@ class KgGamesController < ApplicationController
 
   def destroy
     @kg_game = KgGame.find(params[:id])
-    if @kg_game.destroy
-      flash[:notice] = "Game deleted successfully!"
-    else
-      flash[:alert] = "Failed to delete game."
-    end
+    @kg_game.destroy
 
     redirect_to kg_games_path, status: :see_other
   end
