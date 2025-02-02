@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  objective: MyString
+  action_zone: MyString
+  weapon: MyString
+  flavor_test: MyString
+  difficulty: 1
+  type: 
+
+two:
+  name: MyString
+  objective: MyString
+  action_zone: MyString
+  weapon: MyString
+  flavor_test: MyString
+  difficulty: 1
+  type: 
