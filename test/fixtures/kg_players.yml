@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  color: MyString
+  target: MyString
+  kill_mean: MyString
+  state: MyString
+  number_of_kills: 1
+  role: MyString
+
+two:
+  name: MyString
+  color: MyString
+  target: MyString
+  kill_mean: MyString
+  state: MyString
+  number_of_kills: 1
+  role: MyString

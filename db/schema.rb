@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_01_181407) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_02_094106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,4 +22,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_01_181407) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "kg_players", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "target"
+    t.string "kill_mean"
+    t.string "state"
+    t.integer "number_of_kills"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "kg_game_id", null: false
+    t.index ["kg_game_id"], name: "index_kg_players_on_kg_game_id"
+  end
+
+  add_foreign_key "kg_players", "kg_games"
 end
