@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'kill_means/new'
+  get 'kill_means/create'
+  get 'kill_means/update'
+  get 'kill_means/edit'
+  get 'kill_means/destroy'
+  get 'kill_means/index'
+  get 'kill_means/show'
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "pages#home"
