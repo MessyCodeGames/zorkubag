@@ -31,6 +31,30 @@ class KgGamesController < ApplicationController
     redirect_to kg_games_path, status: :see_other
   end
 
+  def verify_password
+    @kg_game = KgGame.find(params[:id])
+  end
+
+  def verify_password_check
+    p "Entering password checking method!"
+    @kg_game = KgGame.find(params[:id])
+    entered_password = params[:password]
+
+    if entered_password
+      p "Entered password: #{entered_password} worked!"
+    else
+      p "!!!! Entered password did not work!!!"
+    end
+
+
+    if @kg_game.password == entered_password
+      redirect_to kg_game_path(@kg_game)
+    else
+      flash[:alert] = "Incorrect password, try again."
+      redirect_to verify_password_kg_game_path(@kg_game), alert: "Incorrect password"
+    end
+  end
+
   private
 
   def kg_game_params
