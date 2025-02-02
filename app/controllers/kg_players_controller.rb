@@ -1,10 +1,12 @@
 class KgPlayersController < ApplicationController
-  before_action :set_kg_game, only: [:new, :create, :destroy]
+  before_action :set_kg_game, only: [:new, :create, :destroy, :show]
 
   def index
   end
 
   def show
+    @kg_game = KgGame.find(params[:kg_game_id])
+    @kg_player = KgPlayer.find(params[:id])
   end
 
   def new
@@ -13,7 +15,7 @@ class KgPlayersController < ApplicationController
 
   def create
     @kg_player = KgPlayer.new(kg_player_params)
-    @kg_player.kg_game = @kg_game # Ici lien entre les deux objets
+    @kg_player.kg_game = @kg_game
     @kg_player.save
 
     redirect_to kg_game_path(@kg_game)

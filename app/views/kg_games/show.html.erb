@@ -12,6 +12,11 @@
         <%= link_to "Delete", kg_game_kg_player_path(@kg_game, player),
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
           class: "p-1 bg-[#9C222D] text-white" %>
+        <%= link_to kg_game_kg_player_path(@kg_game, player),
+          class: "p-1 bg-[#099F55] drop-shadow-xl",
+          onclick: "return confirm('Are you sure you are player #{player.name}?');" do %>
+          <span class="flex flex-row items-center gap-2">Enter game</span>
+        <% end %>
       </li>
     <% end %>
   </ul>

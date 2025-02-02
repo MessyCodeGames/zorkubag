@@ -36,16 +36,8 @@ class KgGamesController < ApplicationController
   end
 
   def verify_password_check
-    p "Entering password checking method!"
     @kg_game = KgGame.find(params[:id])
     entered_password = params[:password]
-
-    if entered_password
-      p "Entered password: #{entered_password} worked!"
-    else
-      p "!!!! Entered password did not work!!!"
-    end
-
 
     if @kg_game.password == entered_password
       redirect_to kg_game_path(@kg_game)
