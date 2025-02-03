@@ -53,9 +53,13 @@ class KgGamesController < ApplicationController
     @kg_game.save
 
     players = @kg_game.kg_players.shuffle
+    kill_means = KillMean.all.shuffle
 
     players.each_with_index do |player, index|
-      player.update(target: players[(index + 1) % players.length].name)
+      player.update!(
+        target: players[(index + 1) % players.length].id,
+        kill_mean: kill_means[index]
+      )
     end
 
     redirect_to kg_game_path(@kg_game)
