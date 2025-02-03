@@ -47,6 +47,20 @@ class KgGamesController < ApplicationController
     end
   end
 
+  def start_game
+    @kg_game = KgGame.find(params[:id])
+    @kg_game.state = "in_progress"
+    @kg_game.save
+
+    players = @kg_game.kg_players.shuffle
+
+    players.each_with_index do |player, index|
+      player.update(target: players[(index + 1) % players.length].name)
+    end
+
+    redirect_to kg_game_path(@kg_game)
+  end
+
   private
 
   def kg_game_params
