@@ -10,6 +10,12 @@
   <% end %>
 
   <% if @kg_game.state == "in_progress" %>
-    <p class="text-base">Your target is <%= @kg_player.target %></p>
+    <p class="text-base">Votre cible est: <%= KgPlayer.find(@kg_player.target).name %></p>
+    <p class="text-base">Nom de la carte: <%= @kg_player.kill_mean&.name %></p>
+    <p class="text-base">Zone d'action: <%= @kg_player.kill_mean&.action_zone %></p>
+    <p class="text-base">Votre arme: <%= @kg_player.kill_mean&.weapon %></p>
+    <p class="text-base">Ojectif: <%= @kg_player.kill_mean&.objective %></p>
+    <p class="text-base"><em><%= @kg_player.kill_mean&.flavor_test %></em></p>
+
   <% end %>
 </div>
