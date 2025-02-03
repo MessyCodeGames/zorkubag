@@ -17,9 +17,10 @@
           onclick: "return confirm('Are you sure you are player #{player.name}?');" do %>
           <span class="flex flex-row items-center gap-2">Enter game</span>
         <% end %>
-        <span><%= KgPlayer.find(player.target).name %></span>
-        <span><%= player.kill_mean&.name %></span>
-
+          <% if @kg_game.state == "in_progress" %>
+            <span><%= KgPlayer.find(player.target).name %></span>
+            <span><%= player.kill_mean&.name %></span>
+          <% end %>
       </li>
     <% end %>
   </ul>
