@@ -1,4 +1,15 @@
 <div class="flex flex-col gap-4">
   <h1 class="font-bold text-4xl">Welcome <%= @kg_player.name %>!</h1>
-  
+
+  <% if @kg_game.state == "setup" %>
+    <p class="text-base">Game is starting soon!</p>
+  <% elsif @kg_game.state == "in_progress" %>
+    <p class="text-base">Game is in progress!</p>
+  <% else %>
+    <p class="text-base">Game is finished!</p>
+  <% end %>
+
+  <% if @kg_game.state == "in_progress" %>
+    <p class="text-base">Your target is <%= @kg_player.target %></p>
+  <% end %>
 </div>
