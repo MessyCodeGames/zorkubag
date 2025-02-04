@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'kill_means/new'
-  get 'kill_means/create'
-  get 'kill_means/update'
-  get 'kill_means/edit'
-  get 'kill_means/destroy'
-  get 'kill_means/index'
-  get 'kill_means/show'
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "pages#home"
@@ -18,6 +11,10 @@ Rails.application.routes.draw do
       post :verify_password_check
       get :start_game
     end
-    resources :kg_players, only: [:index, :new, :create, :destroy, :show]
+    resources :kg_players, only: [:index, :new, :create, :destroy, :show] do
+      member do
+        post :kill_target
+      end
+    end
   end
 end

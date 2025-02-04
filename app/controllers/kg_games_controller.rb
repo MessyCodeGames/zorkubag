@@ -13,6 +13,7 @@ class KgGamesController < ApplicationController
 
   def create
     @kg_game = KgGame.new(kg_game_params)
+    @kg_game.state = "setup"
     @kg_game.save
 
     redirect_to kg_game_path(@kg_game)
