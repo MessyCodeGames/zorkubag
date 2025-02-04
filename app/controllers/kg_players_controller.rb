@@ -34,6 +34,30 @@ class KgPlayersController < ApplicationController
   def edit
   end
 
+  def kill_target
+    @kg_game = KgGame.find(params[:kg_game_id])
+    @kg_player = KgPlayer.find(params[:id])
+
+    victim_id = @kg_player.target.to_i # Convert to integer
+    victim = KgPlayer.find_by(id: victim_id) # Use `find_by` to avoid errors if nil
+
+    new_target_id = victim.target.to_i
+    new_kill_mean = victim.kill_mean
+
+    unless victim
+      p "Error: Victim not found!"
+      return redirect_to kg_game_kg_player_path(@kg_game, @kg_player)
+    end
+
+    @kg_player.update!(
+      target: new_target_id,
+      kill_mean: new_kill_mean#,
+      #number_of_kills: @kg_player.number_of_kills + 1
+    )
+
+    redirect_to kg_game_kg_player_path(@kg_game, @kg_player)
+  end
+
   private
 
   def kg_player_params

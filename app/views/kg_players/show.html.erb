@@ -16,6 +16,13 @@
     <p class="text-base">Votre arme: <%= @kg_player.kill_mean&.weapon %></p>
     <p class="text-base">Ojectif: <%= @kg_player.kill_mean&.objective %></p>
     <p class="text-base"><em><%= @kg_player.kill_mean&.flavor_test %></em></p>
+  <% end %>
 
+  <% if @kg_game.state == "in_progress" %>
+    <%= link_to "J'ai eu ma cible!",
+      kill_target_kg_game_kg_player_path(@kg_game, @kg_player),
+      data: { turbo_method: :post, turbo_confirm: "!! Etes-vous certain d'avoir bien tué votre cible? (Cette action est définitive!) !!" },
+      class:"flex flex-row text-base text-white items-center gap-2 bg-[#099F55] p-4 drop-shadow-xl"
+    %>
   <% end %>
 </div>
