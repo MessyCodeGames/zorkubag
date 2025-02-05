@@ -66,6 +66,9 @@ class KgGamesController < ApplicationController
     redirect_to kg_game_path(@kg_game)
   end
 
+  def end_game_screen
+  end
+
   private
 
   def kg_game_params

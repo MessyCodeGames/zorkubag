@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :verify_password
       post :verify_password_check
       get :start_game
+      get :end_game_screen
     end
     resources :kg_players, only: [:index, :new, :create, :destroy, :show] do
       member do
