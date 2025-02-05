@@ -55,6 +55,14 @@ class KgPlayersController < ApplicationController
       #number_of_kills: @kg_player.number_of_kills + 1
     )
 
+    victim.update!(state: "dead")
+
+    if @kg_game.check_end_of_game
+      p "Le jeu est terminé!"
+      redirect_to end_game_screen_kg_game_path(@kg_game)
+      return
+    end
+
     redirect_to kg_game_kg_player_path(@kg_game, @kg_player)
   end
 
