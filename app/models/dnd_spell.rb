@@ -1,0 +1,2 @@
+class DndSpell < ApplicationRecord
+end

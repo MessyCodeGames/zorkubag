@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "pages#home"
@@ -18,4 +19,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :my_games, only: [:index, :show]
+  resources :dnd_spells, only: [:index, :new, :create, :show, :destroy]
 end
