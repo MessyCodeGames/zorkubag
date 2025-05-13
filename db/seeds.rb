@@ -113,5 +113,16 @@ KillMean.create!(
   card_type: "blue"
 )
 
-
 puts 'Kill means cards created'
+
+# Creating the games
+puts 'Destroying all my games'
+MyGame.destroy_all
+puts 'All my games have been destroyed'
+
+puts 'Creating the games'
+MyGame.create!(
+  name: "DnD"
+)
+
+puts 'All games created'

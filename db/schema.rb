@@ -10,9 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_05_093817) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_13_192803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dnd_spells", force: :cascade do |t|
+    t.string "name"
+    t.string "spell_class"
+    t.integer "level"
+    t.string "school"
+    t.string "casting_time"
+    t.string "range"
+    t.string "components"
+    t.string "duration"
+    t.string "concentration"
+    t.string "ritual"
+    t.boolean "concentration_bool"
+    t.boolean "ritual_bool"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kg_games", force: :cascade do |t|
     t.string "name"
@@ -45,6 +68,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_05_093817) do
     t.string "flavor_test"
     t.integer "difficulty"
     t.string "card_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "my_games", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

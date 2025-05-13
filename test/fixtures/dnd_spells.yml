@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  spell_class: MyString
+  level: 1
+  school: MyString
+  casting_time: MyString
+  range: MyString
+  components: MyString
+  duration: MyString
+  duration: MyString
+  concentration: MyString
+  ritual: MyString
+  concentration_bool: false
+  ritual_bool: false
+
+two:
+  name: MyString
+  spell_class: MyString
+  level: 1
+  school: MyString
+  casting_time: MyString
+  range: MyString
+  components: MyString
+  duration: MyString
+  duration: MyString
+  concentration: MyString
+  ritual: MyString
+  concentration_bool: false
+  ritual_bool: false
