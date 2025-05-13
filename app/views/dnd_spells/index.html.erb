@@ -1,4 +1,11 @@
-<div>
-  <h1 class="font-bold text-4xl">DndSpells#index</h1>
-  <p>Find me in app/views/dnd_spells/index.html.erb</p>
+<div class="flex flex-col gap-4">
+  <h1 class="text-3xl font-bold">DnD Spells</h1>
+
+  <div>
+    <ul>
+      <% @dnd_spells.each do |spell| %>
+        <li><%= spell.name %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
