@@ -1,5 +1,10 @@
 class DndSpellsController < ApplicationController
-  def new
+  def index
+    @dnd_spells = DndSpell.all
+  end
+
+  def show
+    @dnd_spell = DndSpell.find(params[:id])
   end
 
   def create
@@ -17,6 +22,4 @@ class DndSpellsController < ApplicationController
   def index
   end
 
-  def show
-  end
 end
