@@ -126,3 +126,69 @@ MyGame.create!(
 )
 
 puts 'All games created'
+
+# Creating the spells
+puts 'Destroying all spells'
+DndSpell.destroy_all
+puts 'All spells have been destroyed'
+puts 'Creating the spells'
+DndSpell.create!(
+  name: "Fireball",
+  spell_class: "Sorcerer",
+  level: 3,
+  school: "Evocation",
+  casting_time: "1 action",
+  range: "150 feet",
+  components: "V, S, M (a tiny ball of bat guano and sulfur)",
+  duration: "Instantaneous",
+  concentration: "No",
+  ritual: "No",
+  concentration_bool: false,
+  ritual_bool: false
+)
+
+DndSpell.create!(
+  name: "Healing Word",
+  spell_class: "Bard",
+  level: 1,
+  school: "Evocation",
+  casting_time: "1 bonus action",
+  range: "60 feet",
+  components: "V",
+  duration: "Instantaneous",
+  concentration: "No",
+  ritual: "No",
+  concentration_bool: false,
+  ritual_bool: false
+)
+
+DndSpell.create!(
+  name: "Shield",
+  spell_class: "Sorcerer",
+  level: 1,
+  school: "Abjuration",
+  casting_time: "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell",
+  range: "Self",
+  components: "V, S",
+  duration: "1 round",
+  concentration: "No",
+  ritual: "No",
+  concentration_bool: false,
+  ritual_bool: false
+)
+DndSpell.create!(
+  name: "Mage Hand",
+  spell_class: "Sorcerer",
+  level: 0,
+  school: "Conjuration",
+  casting_time: "1 action",
+  range: "30 feet",
+  components: "V, S",
+  duration: "1 minute",
+  concentration: "No",
+  ritual: "No",
+  concentration_bool: false,
+  ritual_bool: false
+)
+
+puts 'spells created '

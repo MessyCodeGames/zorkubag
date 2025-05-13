@@ -31,12 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_13_192803) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "games", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "kg_games", force: :cascade do |t|
     t.string "name"
     t.string "password"
